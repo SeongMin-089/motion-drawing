@@ -1,0 +1,54 @@
+const tl = anime.timeline({ 
+    defaults: { 
+    duration: 750,
+    easing:'easeOutBounce'
+}, 
+});
+
+tl.add({
+    targets:'.star path',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing:'easeInOutSine',
+    duration:2500,
+    // delay:function(el, i) {return i*250},
+    loop:true,
+    direction: 'alternate',
+});
+tl.add({
+    targets:'.ico',
+    opacity:1
+})  
+
+const path = anime.path('.star path')
+
+anime({
+    targets:'.ico',
+    translateX:path('x'),
+    translateY:path('y'),
+    rotate:path('angle'),
+    easing:'linear',
+    loop:true,
+    duration:10000
+})
+
+const btn = document.querySelector('.btn')
+
+
+function nameDraw() {
+    anime({
+        targets:'.name path',
+        strokeDashoffset: [anime.setDashoffset, 0,],
+        duration:1000,
+        delay:function(el, i) {return i * 250},
+        easing:'easeInOutSine'
+    })
+}
+btn.addEventListener('click', nameDraw) 
+
+
+const tlTxt = anime.timeline({ 
+    defaults: { 
+    duration: 750,
+    easing:'easeOutBounce'
+}, 
+});

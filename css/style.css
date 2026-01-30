@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  height: 100vh;
+  background-color: #7ed261;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.star {
+  width: 300px;
+  stroke-width: 3;
+  fill: transparent;
+  stroke: #80118c;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1775;
+  z-index: 0;
+}
+.ico {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(202, 82, 158);
+  position: absolute;
+  margin-left: -255px;
+  margin-top: -255px;
+  opacity: 0;
+  border-radius: 99px;
+  z-index: 1;
+}
+.ico.left {
+  left: 530px;
+  top: 560px;
+}
+.ico.right {
+  right: 565px;
+  top: 560px;
+}
+
+svg.name {
+  position: absolute;
+  width: 1400px;
+  z-index: 3;
+}
+svg.name path {
+  stroke-width: 3;
+  stroke: #fff;
+}
+
+button.btn {
+  position: absolute;
+  top: 300px;
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+  color: #fff;
+  border-bottom: 10px solid #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
